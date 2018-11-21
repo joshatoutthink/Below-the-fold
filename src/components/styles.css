@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'pt_monoregular';
+    src: url('../fonts/ptm55ft-webfont.woff2') format('woff2'),
+         url('../fonts/ptm55ft-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+html p{
+    line-height: 1.5rem;
+    font-weight: 100;
+    font-family:baskerville;
+  }
+ html h1, html h2, html h3, html h4, html h5, html h6 {
+      font-weight: 200;
+      /* color: #3a405a; */
+      text-transform: capitalize;
+      font-family: 'pt_monoregular';
+  }
+ html h1{
+    font-size:3rem;
+  }
+ html h2{
+    font-size:2.5rem;
+    color:#3a405a;
+   
+
+  }
+ html h3{
+    font-size:2rem;
+    font-weight: 300;
+    font-weight: 400;  
+  }
+ html h4{
+    font-size:1.5rem;
+    font-weight: 900;
+  }
+ html h5{
+    font-size:1.3rem;
+    font-weight: 300;
+  }
+html  h6{
+    font-size:1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+.stickyNav{
+  transition:all 2s ease;
+}
+@keyframes titleScroll{
+  0%{
+    transform: translateX(40vw);
+  }
+  100%{
+    transform: translateX(0);
+    font-size:28px;
+    padding-top:15px;
+  }
+}
+@keyframes retitleScroll{
+  0%{
+    transform: translateX(-40vw);
+    font-size:28px;
+    padding-top:15px;
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+.stickyOn .logobar {
+  align-items: flex-start;
+  
+}
+.stickyOn .logobar h1{
+  animation: titleScroll .28s ease 0s forwards;
+}
+.logobar h1{
+  animation: retitleScroll .28s ease 0s forwards;
+  padding-bottom:20px;
+  margin-bottom:40px;
+
+}
+@media(max-width:768px){
+  .logobar h1{
+    margin:0;
+  }
+}
+ul{
+  margin:0;
+}
+.logobar{
+  display:flex;
+  flex-flow:column;
+  align-items: center;
+  justify-content:space-between;      
+  background:#fffafc;
+  padding: 25px 60px  10px;
+}
+@media(max-width:768px){
+  .logobar{
+    flex-flow: row;
+    align-items: center;
+    justify-content:space-between; 
+    padding:10px 20px;
+  }
+  .logobar h1{
+    font-size: 1.5rem;
+    animation: none;
+    padding-bottom:0;
+  }
+  .stickyOn .logobar h1{
+    animation: none;
+  }
+}
+.stickyOn .logobar{
+  flex-flow:row;
+}
+.logobar h1 span{
+  font-family: cursive;
+  text-transform: lowercase;
+  color:#c8aaa6;
+}
+
+
+
+
+.logobar  a{
+  text-decoration:none;
+  display:inline-block;
+  color:#3b334c;
+  transition:all .14s ease-in;
+  margin:0 30px 0 0 !important;
+}
+.logobar a:last-child{
+  margin-right:0 !important;
+}
+.logobar a:hover{
+  color:#000;
+} 
+.logoType{ 
+    color:#3b334c;
+    padding-top:25px;
+    position:relative;
+    font-weight:100;
+    transition:transform .14s ease-in;
+}
+@media(max-width:768px){
+  .logoType h1{
+    margin-bottom:0;
+  }
+}
+.stickyOn .logoType{
+  margin-bottom: 0;
+}
+.logoType:before{
+  left:35%;
+  top:0px;
+  content:"";
+  display:block;
+  width:30%;
+  height:5px;
+  background:#3b334c;
+  position:absolute;
+  transition: all .28s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.logoType:hover{
+  transform: scale(1.01);
+}
+.logoType:hover:before{
+  background:#c8aaa6;
+  top:100%;
+  width:100%;
+  left:0;     
+}
+a{
+  color:black;
+  text-decoration: none;
+}
+.menu-list{
+  display:flex;
+  min-width:768px;
+  max-width:90%;
+  justify-content:space-around;
+}
+.modal-menu-menu-list{
+  flex-flow:column;
+  display:flex;
+  min-width:768px;
+  max-width:90%;
+  align-items:justify-content;
+}
+.menu-list li, .modal-menu-menu-list li{
+  list-style:none;
+}
+.stickyOn .menu-list{
+  display: none;
+}
+@media(max-width:768px){
+  .menu-list{
+    display:none;
+  }
+}
+.modal-menu-icon{
+  display:none;
+}
+.stickyOn .modal-menu-icon{
+  display:flex;
+  flex-flow:column;
+}
+@media(max-width:768px){
+  .modal-menu-icon{
+  display:flex;
+  flex-flow:column;
+}
+}
+.modal-menu-icon span{
+  width:40px;
+  height: 5px;
+  margin-bottom:7px;
+  background-color:#3a405a;
+}
+
+.modal-menu-icon span:first-child{
+  position: relative;
+}
+.modal-menu-icon span:first-child:before{
+  background-color:#c8aaa6;
+  height:5px;
+  transition: all .28s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width:0%;
+  top:0;
+  content:"";
+  position: absolute;
+}
+.modal-menu-icon:hover span:first-child:before{
+  width:100%
+}
