@@ -13,7 +13,9 @@ export default class Page extends Component {
                 <PageLayout>
                     <Main>
                         <h2>{data.wordpressPage.title}</h2>
-                        <img src={data.wordpressPage.featured_media.source_url} />
+                        {data.featured_media&&(
+                            <img src={data.wordpressPage.featured_media.source_url} />
+                        )}
                         <div dangerouslySetInnerHTML={{
                             __html: data.wordpressPage.content
                         }} />

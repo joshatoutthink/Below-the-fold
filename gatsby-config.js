@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve:'gatsby-source-wordpress',
       options:{
-        baseUrl:'localhost:8080',
+        baseUrl:'btfbackend.alljmk.xyz',
         protocol: 'http',
         hostingWPCOM:false,
         useACF:true,

@@ -3,10 +3,10 @@ import React, { Component, Fragment } from "react";
 import styled from 'styled-components';
 import Sticky from 'react-sticky-el';
 import Menu from './Menu';
-import ModalMenuIcon from './modalMenuIcon';
+/* import ModalMenuIcon from './modalMenuIcon';
 import Toggle from '../utilities/Toggle'
 import Modal from '../utilities/Modal'
-import ModalMenu from './ModalMenu'
+import ModalMenu from './ModalMenu' */
 
 
 export default class HeaderBar extends Component {
@@ -59,7 +59,7 @@ export default class HeaderBar extends Component {
                       <Menu/>  
                     </div>
                    <div>
-                        <Toggle>
+                        {/* <Toggle>
                             {({ toggle, on }) => (
                                 <Fragment>
                                     <ModalMenuIcon toggle={toggle}/>
@@ -68,7 +68,7 @@ export default class HeaderBar extends Component {
                                     </Modal>
                                 </Fragment>
                             )}
-                        </Toggle>
+                        </Toggle> */}
                     </div> 
                 </div>
             </Sticky>
