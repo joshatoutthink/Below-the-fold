@@ -5,16 +5,19 @@ import styled from 'styled-components'
 
 
 export default class SinglePost extends Component {
+    
   render() {
-      const { edge } = this.props
+      const { post } = this.props
+      console.log(post.excerpt.length)
+      
     return (
       <Post>
-            <li key={edge.node.slug}>
+            <li>
                 <div>
-                    <Link to={`/${edge.node.slug}`}><h3>{edge.node.title}</h3></Link>
-                     <img src={edge.node.featured_media.source_url} alt={edge.node.slug} />
+                    <Link to={`/${post.slug}`}><h3>{post.title}</h3></Link>
+                     <img src={post.featured_media.source_url} alt={post.slug} />
                     <div dangerouslySetInnerHTML={{
-                        __html: edge.node.excerpt
+                        __html: post.excerpt
                     }} />
                 </div>
             </li>

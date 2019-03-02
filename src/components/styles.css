@@ -6,8 +6,15 @@
     font-style: normal;
 
 }
-
-
+p.link-more{
+  display:none;
+}
+a.more-link{
+  display:none;
+}
+.center{
+  text-align: center;
+}
 html p{
     line-height: 1.5rem;
     font-weight: 100;
@@ -50,7 +57,7 @@ html  h6{
 .stickyNav{
   transition:all 2s ease;
 }
-@keyframes titleScroll{
+/* @keyframes titleScroll{
   0%{
     transform: translateX(40vw);
   }
@@ -59,8 +66,8 @@ html  h6{
     font-size:28px;
     padding-top:15px;
   }
-}
-@keyframes retitleScroll{
+} */
+/* @keyframes retitleScroll{
   0%{
     transform: translateX(-40vw);
     font-size:28px;
@@ -69,19 +76,22 @@ html  h6{
   100%{
     transform: translateX(0);
   }
-}
+} */
 .stickyOn .logobar {
   align-items: flex-start;
   
 }
 .stickyOn .logobar h1{
-  animation: titleScroll .28s ease 0s forwards;
+  /* animation: titleScroll .28s ease 0s forwards; */
 }
 .logobar h1{
-  animation: retitleScroll .28s ease 0s forwards;
+  /*animation: retitleScroll .28s ease 0s forwards;*/
   padding-bottom:20px;
   margin-bottom:40px;
 
+}
+.logobar--small h1{
+  font-size: 2rem;
 }
 @media(max-width:768px){
   .logobar h1{
@@ -98,6 +108,15 @@ ul{
   justify-content:space-between;      
   background:#fffafc;
   padding: 25px 60px  10px;
+}
+.logobar--small{
+  display:flex;
+  flex-flow:row;
+  align-items: center;
+  justify-content:space-between;      
+  background:#fffafc;
+  padding: 20px 20px 10px;
+  
 }
 @media(max-width:768px){
   .logobar{
@@ -118,7 +137,7 @@ ul{
 .stickyOn .logobar{
   flex-flow:row;
 }
-.logobar h1 span{
+.logobar h1 span, .logobar--small h1 span{
   font-family: cursive;
   text-transform: lowercase;
   color:#c8aaa6;
@@ -165,6 +184,18 @@ ul{
   background:#3b334c;
   position:absolute;
   transition: all .28s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.logobar--small .logobar__contents{
+  max-width: 1100px;
+  margin:0 auto;
+  width:100%;
+}
+.logobar--small .logobar__contents .logoType{
+  margin-left:20px;
+  display: inline-block;
+}
+.logobar--small .logoType:before{
+  left:0;
 }
 .logoType:hover{
   transform: scale(1.01);

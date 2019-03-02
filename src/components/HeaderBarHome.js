@@ -1,12 +1,12 @@
 import { Link } from 'gatsby'
 import React, { Component } from "react";
 
-export default class HeaderBar extends Component {
+export default class HeaderBarHome extends Component {
    
     render() {
         return (
-          <div className='logobar--small'>
-                <div className='logobar__contents'>
+            <div style={{ color:'red!important', zIndex:999}}>
+                <div className='logobar'>
                     <Link
                         to={'/'}
                     >

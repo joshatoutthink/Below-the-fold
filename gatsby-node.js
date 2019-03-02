@@ -27,28 +27,14 @@ exports.createPages = ({ graphql, actions }) => {
                                 id
                                 slug
                                 title
-                               featured_media{
-                                   source_url
-                               }
-                                author {
-                                    name
-                                }
-                                date(formatString:"MMMM DD, YYYY")
-                                categories {
-                                    name
+                                content
+                                featured_media{
+                                    source_url
                                 }
                             }
                         }
                     }
-                    allWordpressCategory{
-                        edges{
-                            node{
-                                name
-                                slug
-                            }
-                        }
-                    }
-                }
+                }    
             `
         ).then(result => {
         if(result.errors) {
@@ -56,15 +42,15 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors)
         }
 
-            result.data.allWordpressPage.edges.forEach(({ node }) => {
+              result.data.allWordpressPage.edges.forEach((edge) => {
                 createPage({
-                    path: node.slug,
+                    path: edge.node.slug,
                     component: path.resolve('./src/templates/page.js'),
                     context: {
-                        slug: node.slug,
+                        slug: edge.node.slug,
                     },
                 })
-            })
+            }) 
             result.data.allWordpressPost.edges.forEach(({node})=>{
                 createPage({
                     path:node.slug,
@@ -74,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
                     },
                 })
             })
-            result.data.allWordpressCategory.edges.forEach(({ node }) => {
+            /*result.data.allWordpressCategory.edges.forEach(({ node }) => {
                 createPage({
                     path: node.slug,
                     component: path.resolve('./src/templates/archive.js'),
@@ -82,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
                         slug: node.slug,
                     },
                 })
-            })
+            })  */
 
         resolve()
     })
