@@ -5,14 +5,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve:'gatsby-source-wordpress',
-      options:{
-        baseUrl:'http://devserver/btfbackend',
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'http://btfbackend.alljmk.xyz/',
         protocol: 'http',
-        hostingWPCOM:false,
-        useACF:true,
-
-      }
+        hostingWPCOM: false,
+        useACF: true,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
