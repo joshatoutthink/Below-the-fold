@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import HeaderBarHome from './HeaderBarHome'
-import HeaderBar from './HeaderBar';
+import HeaderBar from './HeaderBar'
 import Footer from './footer'
 import AboutSide from './AboutSide'
 import MostRecent from './MostRecent'
@@ -13,31 +13,31 @@ import './layout.css'
 import './styles.css'
 
 const LayoutStyles = styled.div`
-  display:grid;
-  max-width:1100px;
-  margin:0 auto;
-  grid-gap:30px;
-  grid-template-columns:minmax(350px, 1fr) minmax(270px, 350px);
-  @media(max-width:700px){
-    grid-template-columns:100%;
+  display: grid;
+  max-width: 1100px;
+  margin: 0 auto;
+  grid-gap: 30px;
+  grid-template-columns: minmax(350px, 1fr) minmax(270px, 350px);
+  @media (max-width: 700px) {
+    grid-template-columns: 100%;
   }
-  .sidebar{
-    padding-top:40px;
-    padding-right:20px;
-    .sidebar-child{
-      width:100%;
-      background:#efefef;
-      border-top:5px solid #c8aaa6;
-      box-shadow:0 2px 4px #c8aaa6;
+  .sidebar {
+    padding-top: 40px;
+    padding-right: 20px;
+    .sidebar-child {
+      width: 100%;
+      background: #efefef;
+      border-top: 5px solid #c8aaa6;
+      box-shadow: 0 2px 4px #c8aaa6;
       margin: 40px 0;
-      h4{
-        color:#3a405a;
+      h4 {
+        color: #3a405a;
       }
     }
   }
 `
 
-const Layout = (props) => (
+const Layout = props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -50,18 +50,23 @@ const Layout = (props) => (
     `}
     render={data => (
       <>
-       <Helmet
+        <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'A Blog' },
+            {
+              name: 'keywords',
+              content: 'A Blog About The Stuff Below The Fold',
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        {props.pageSlug === '/' ? <HeaderBarHome
-          siteTitle={data.site.siteMetadata.title}
-        />: <HeaderBar/>}
+        {props.pageSlug === '/' ? (
+          <HeaderBarHome siteTitle={data.site.siteMetadata.title} />
+        ) : (
+          <HeaderBar />
+        )}
         <LayoutStyles>
           <div
             style={{
@@ -75,14 +80,14 @@ const Layout = (props) => (
           </div>
           <div className="sidebar">
             <div className="sidebar-child">
-              <AboutSide/>
+              <AboutSide />
             </div>
             <div className="sidebar-child">
               <MostRecent />
             </div>
           </div>
         </LayoutStyles>
-        <Footer/>
+        <Footer />
       </>
     )}
   />

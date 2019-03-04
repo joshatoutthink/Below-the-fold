@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Below The Fold',
   },
   plugins: [
     {
@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Below The Fold',
+        short_name: 'BTF',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
