@@ -15,6 +15,7 @@ import './styles.css'
 const LayoutStyles = styled.div`
   display: grid;
   max-width: 1100px;
+  background: white;
   margin: 0 auto;
   grid-gap: 30px;
   grid-template-columns: minmax(350px, 1fr) minmax(270px, 350px);
@@ -24,15 +25,19 @@ const LayoutStyles = styled.div`
   .sidebar {
     padding-top: 40px;
     padding-right: 20px;
+    @media (max-width: 700px) {
+      margin-left: 20px;
+    }
     .sidebar-child {
       width: 100%;
-      background: #efefef;
-      border-top: 5px solid #c8aaa6;
-      box-shadow: 0 2px 4px #c8aaa6;
+      padding-bottom: 20px;
+      background: ${({ theme }) => theme.offWhite};
+      ${({ theme }) => theme.topBar(theme.rust)};
+      ${({ theme }) => theme.boxShadow};
       margin: 40px 0;
-      h4 {
-        color: #3a405a;
-      }
+      /* h4 {
+        color: ${({ theme }) => theme.black};
+      } */
     }
   }
 `
