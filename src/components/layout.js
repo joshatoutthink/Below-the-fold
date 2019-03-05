@@ -32,7 +32,7 @@ const LayoutStyles = styled.div`
       width: 100%;
       padding-bottom: 20px;
       background: ${({ theme }) => theme.offWhite};
-      ${({ theme }) => theme.topBar(theme.rust)};
+      border-top: 5px solid ${({ theme }) => theme.rust};
       ${({ theme }) => theme.boxShadow};
       margin: 40px 0;
       /* h4 {
